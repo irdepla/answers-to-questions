@@ -2,19 +2,47 @@ Answers to questions
 
 
 
-1. Single va Multi threading:
+### 1. Single va Multi threading:
 
 Bulani asosiy farqi bu single thread bitta vaqtda bitta ishshi qiloladi a lekin multi thread ozi uchun kop thread la yaratadi va koddayam misol uchun har bittasi bn alohida ishlidi vas hunisiyam uni single threaddan ustunligi hisoblanadi bu bizaga koddi sifatli tez ishlashishiga yordam beradi.
 
 threading ni ozi bu bir nechta kod bir vaqtda qila olishlik boladi, yani bunda single threading oz nomi bn bir vaqtda bitta thread bor va u bitta ishshi qila olishi mumkinligini bildiradi. Bu bizag JS da eventloop lani ishlashiniyam chuntrb ketadi misol uchun dasturda qanaqadir kutadigan kotta kod bosa, single thread uni kutib turishi mumkin a lekin event loop bizaga osha kotta kodlani queque ga joylap qoyadi, asosiy kod qismi qilinishi davom etadi.
 
 
-2.
+### 2. Synxron va Asynxron dasturlash
+
+
+Asosiy farqi bu - sinxron dasturlashda kod ketma-ket o'qiladi, va harr bitta kod bajarilib bolingandan keyin keyingisiga otadi, agar u qanaqadir voxt talab qisa unda butun programmayam toxtab turib kod bajarilishini kutadi va keying kodga otadi a lekin asinxron dasturlashda shuni teskarisi dastur voxt oladigan kodlani kutib turmidi keyingi kodlaga otib keturadi.
+
+
+### 3. JavaScript Event Loop 
+
+
+Event loop bu JS dagi asinxron koddi ishlashiga va uni kontrol qilishga yordam beradigan JS mexanizmi.
+Event loop fetch setTimeout ga oxshagan kodlani asinxron ravishda ishlashiga yordam beradi.Uni yana bitta asosiy vaziflaridan bittasi bu uni task queque va microtask queque bilan ishlashi u shu ikkalisiniyam nazorat qiladi.
+
+
+
+### 4. Task and Microtask queque
+
+
+Task queque kopincha **setTimeout**, **setInterval**, bn ishlidi chunki bula og'ir kod hisoblanadi va shunga sal kopro voxt talab qiladi shuning uchun ula uncha tez bajarilmidi.
+Lekin microtask queque da bosa teskari ulada nisbatan kichkina tez ishlidigan kod boladi. Misol uchun **fetch** va **promise** ga oxshagan kodla nsibatan tez bajariladi.
+
+
+
+### 5. Code run
+
+
+Ekranga 1,4,3, google, 0 , 2 chiqadi. Chunki 1 bilan 4 eng oddiy kodla hisoblanadi ula kutadigan kodamas shunig uchun ula tez bajariladi.Keyingisi 3 chunki promise setTimeout setInterval ga oxshagan funksiyaladan ustun turadi, va undan keyin bu voxtgacha googledan zapros keladi va shunga google chiqadi undan keyin bosa 0 chunki unda korsatilgan voxt 0 u ozidan oldingi setTimeout dan shuning uchun tez ishlidi, oxiri bolib 1s kutadigan setTimeout ishlidi va ekranga 2 chiqadi.
 
 
 
 
+### 6. WEB API
 
+
+WEB api bu browser tomonidan beriladigan har xil platformla bn ishlashda qoshimcha funksiyala beradigan yani dom bn ishlashda yordam beradi.WEB API yordamida turli xil ishlani qsa boladi, geolokatsiya, localstorage va session storage va yana shunga oxshash narsala bn ishlashda yordam beradi.
 
 
 
